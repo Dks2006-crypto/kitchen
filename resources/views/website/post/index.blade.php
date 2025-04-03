@@ -7,7 +7,7 @@
                 <div class="px-3 pt-6">
                     <span
                         class="text-[24px] text-white inline-flex items-center rounded-full-100 px-3 py-1 text-sm font-semibold">
-                        {{ $post->category_post_id->name }}
+                        {{ $post->name }}
                     </span>
                 </div>
 
