@@ -19,6 +19,12 @@ class CategoryPostResource extends Resource
 {
     protected static ?string $model = CategoryPost::class;
 
+    protected static ?string $modelLabel = 'Категория';
+
+    protected static ?string $pluralModelLabel = 'Категории';
+
+    protected static ?string $navigationLabel = 'Категории';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

@@ -44,8 +44,11 @@ class PostSeeder extends Seeder
         ];
 
         foreach($posts as $post){
+
+            $randomCategory = CategoryPost::inRandomOrder()->first();
+
             Post::create([
-                'category_post_id' => 1,
+                'category_post_id' => $randomCategory->id,
                 'name' => $post['name'],
                 'content' => $post['content'],
                 'image' => $post['image'],
