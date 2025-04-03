@@ -15,19 +15,14 @@ class CategoryPostSeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Закон',
+                'name' => 'Рецепты',
                 'is_active' => true,
                 'is_featured' => false,
             ],
             [
-                'name' => 'Эксплуатация',
+                'name' => 'Хитрости',
                 'is_active' => true,
                 'is_featured' => true,
-            ],
-            [
-                'name' => 'События',
-                'is_active' => false,
-                'is_featured' => false,
             ],
         ];
 
