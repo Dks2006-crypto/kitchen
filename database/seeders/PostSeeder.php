@@ -34,7 +34,7 @@ class PostSeeder extends Seeder
                 'is_banner' => true,
             ],
             [
-                'name' => 'Рецепты БлионовавРецепты Блионовав',
+                'name' => 'Рецепт Блионов',
                 'content' => 'Рецепты БлионовавРецепты БлионовавРецепты Блионовав',
                 'image' => null,
                 'is_active' => true,

@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 
 class CategoryPostSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      */
@@ -18,6 +19,16 @@ class CategoryPostSeeder extends Seeder
                 'name' => 'Рецепты',
                 'is_active' => true,
                 'is_featured' => false,
+            ],
+            [
+                'name' => 'Хитрости',
+                'is_active' => true,
+                'is_featured' => true,
+            ],
+            [
+                'name' => 'Завтраки',
+                'is_active' => true,
+                'is_featured' => true,
             ],
             [
                 'name' => 'Хитрости',
