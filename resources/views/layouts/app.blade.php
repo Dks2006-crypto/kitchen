@@ -15,5 +15,6 @@
 <body>
     @include('partials.header')
     {{$slot}}
+    @include('partials.footer')
 </body>
 </html>
