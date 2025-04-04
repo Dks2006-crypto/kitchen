@@ -38,19 +38,18 @@ class PostResource extends Resource
         return $form
         ->schema([
             Group::make()->schema([
-                Section::make('Новый продукт')->schema([
+                Section::make('Новый пост')->schema([
                     TextInput::make('name')
                         ->required()
-                        ->label('Название продукта'),
+                        ->label('Название поста'),
                     Textarea::make('content')
-                        ->label('Описание блюда')
+                        ->label('Описание поста')
                         ->maxLength(255)
                         ->required(),
-
                 ])->columns(2)->columnSpanFull(),
                 Section::make()->schema([
                     FileUpload::make('image')
-                        ->label('Изображение блюда')
+                        ->label('Изображение поста')
                         ->image()
                         ->directory('Post')
                         ->required(),
@@ -58,13 +57,21 @@ class PostResource extends Resource
         ])->columnSpan(2),
         Group::make()->schema([
             Section::make()->schema([
+                Section::make()->schema([
+                    Select::make('category_post_id')
+                        ->required()
+                        ->preload()
+                        ->searchable()
+                        ->label('Категория поста')
+                        ->relationship('post_category', 'name')
+                ]),
                 Toggle::make('is_active')
-                    ->label('Актвная запись')
-                    ->helperText('Запись будет показана на сайте')
+                    ->label('Актвный пост')
+                    ->helperText('Этот пост будет отображаться на сайте')
                     ->default(true),
                 Toggle::make('is_featured')
-                    ->label('Популярная запись')
-                    ->helperText('Запись будет добавлена в популярные записи"')
+                    ->label('Популярный пост')
+                    ->helperText('Пост будет добавлен в "популярные посты"')
                     ->default(false),
             ]),
         ])->columnSpan(1),

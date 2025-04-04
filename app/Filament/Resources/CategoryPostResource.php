@@ -32,11 +32,14 @@ class CategoryPostResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->required(),
-            Forms\Components\Toggle::make('is_active')
-                ->required(),
-            Forms\Components\Toggle::make('is_featured')
-                ->required(),
+                    ->label('Название категории')
+                    ->required(),
+                Forms\Components\Toggle::make('is_active')
+                    ->label('Активная категория')
+                    ->required(),
+                Forms\Components\Toggle::make('is_featured')
+                    ->label('Популярная категория')
+                    ->required(),
             ]);
     }
 
@@ -45,6 +48,7 @@ class CategoryPostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Категория')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),

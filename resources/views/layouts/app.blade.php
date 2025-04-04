@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+    @include('partials.header')
     {{$slot}}
 </body>
 </html>

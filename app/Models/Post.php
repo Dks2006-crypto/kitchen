@@ -16,7 +16,7 @@ class Post extends Model
         'is_featured' => 'boolean',
      ];
 
-    public function posts()
+    public function post_category()
     {
         return $this->belongsTo(CategoryPost::class, 'category_post_id');
     }

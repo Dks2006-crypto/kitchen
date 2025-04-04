@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CategoryPostRelationManager extends RelationManager
 {
-    protected static string $relationship = 'posts';
+    protected static string $relationship = 'post_category';
 
     public function form(Form $form): Form
     {

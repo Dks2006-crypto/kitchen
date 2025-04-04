@@ -8,14 +8,16 @@
                 this.activePost = post;
                 this.openModal = true;
             }
-        }" class="grid grid-cols-3 gap-5 relative">
+        }" class="grid grid-cols-2 md:grid-cols-3 gap-5 relative">
             @foreach ($posts as $post)
             <div class="overflow-hidden rounded-xl bg-white shadow-lg transition-all hover:shadow-xl dark:bg-gray-800">
-                <div class="px-3 pt-6">
+                <div class="px-3 pt-1.5 flex flex-col-reverse">
                     <span
-                        class="text-[24px] text-white inline-flex items-center rounded-full-100 px-3 py-1 text-sm font-semibold">
-                        {{ $post->name }}
-                    </span>
+                        class="text-[18px] text-white inline-flex items-center rounded-full-100 px-3 py-1 text-sm font-semibold">
+                        {{ $post->name }}</span>
+                    <span
+                    class="text-[22px] text-white inline-flex items-center rounded-full-100 px-3 py-1 text-sm font-semibold">
+                    {{ $post->post_category->name}}</span>
                 </div>
 
                 <div class="px-3 py-2">
@@ -28,7 +30,12 @@
                     </p>
                 </div>
 
-                <div class="border-t border-gray-100 px-3 py-4 dark:border-gray-700">
+                <div class="flex items-center justify-center">
+                    <img src="{{ $post->image ? url('storage', $post->image) : url('storage/404.png') }}" alt="{{ $post->name }}"
+                    class="object-cover">
+                </div>
+
+                <div class="border-t border-gray-100 px-3 py-2 dark:border-gray-700">
                     <a href="#" @click="showPost({
                             id: {{ $post->id }},
                             title: ' {{ addslashes($post->name) }} ',
