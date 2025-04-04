@@ -12,9 +12,11 @@
     <style type="text/tailwindcss">
     </style>
 </head>
-<body>
+<body class="grid grid-rows-[auto_1fr_auto] min-h-screen">
     @include('partials.header')
-    {{$slot}}
+    <main>
+        {{$slot}}
+    </main>
     @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>

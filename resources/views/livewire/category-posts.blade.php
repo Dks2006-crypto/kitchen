@@ -1,4 +1,4 @@
-<div class="max-w-[1240px] px-4 mx-auto mt-8 text-center">
+<x-container>
     <h1 class="text-[36px]">Посты</h1>
     <div class="flex items-center justify-center space-x-2 mb-4">
         <button wire:click="selectCategory(null)"
@@ -51,13 +51,8 @@
                 </div>
 
                 <div class="border-t border-gray-100 px-3 py-2 dark:border-gray-700">
-                    <a href="#" @click="showPost({
-                            id: {{ $post->id }},
-                            title: ' {{ addslashes($post->name) }} ',
-                            content: ` {{ addslashes($post->content) }} `
-                        })"
-                        class="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                        Читать далее →
+                    <a href="{{ route('posts.detail', $post->id) }}" class=" text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                        Подробнее →
                     </a>
                 </div>
             </div>
@@ -81,9 +76,9 @@
 
         </div>
         @else
-            <div class="w-full text-center">
-                <h2 class="text-3xl text-blue-800 font-semibold">Потстов данной категории не найдено ☺</h2>
-            </div>
+        <div class="w-full text-center">
+            <h2 class="text-3xl text-blue-800 font-semibold">Потстов данной категории не найдено ☺</h2>
+        </div>
         @endif
     </div>
-</div>
+</x-container>
