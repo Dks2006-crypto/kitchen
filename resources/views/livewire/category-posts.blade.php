@@ -1,9 +1,9 @@
-<div class="max-w-[1240px] px-4 mx-auto mt-12 text-center">
+<div class="max-w-[1240px] px-4 mx-auto mt-8 text-center">
     <h1 class="text-[36px]">Посты</h1>
     <div class="flex items-center justify-center space-x-2 mb-4">
         <button wire:click="selectCategory(null)"
             class="{{ is_null($selectedCategoryId) ? 'bg-blue-500 text-white' : 'bg-gray-200' }} px-4 py-2 rounded cursor-pointer">
-            Все товары
+            Все посты
         </button>
 
         @foreach($categories as $category)
