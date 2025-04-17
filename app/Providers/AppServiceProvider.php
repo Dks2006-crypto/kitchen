@@ -18,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      */
     public function boot(): void
-    {
+	{
+
         $this->loadViewsFrom(base_path('resources/views/website/post'),'post');
-    }
+    	$this->loadViewsFrom(base_path('resources/views/website/contact'), 'contact');
+	}
 }
